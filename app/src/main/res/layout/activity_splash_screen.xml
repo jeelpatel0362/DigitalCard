@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splash"
+    tools:context=".SplashScreen">
+
+    <ImageView
+        android:id="@+id/splashLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/splashlogo"
+        android:layout_marginTop="100dp"
+        />
+    <TextView
+        android:id="@+id/splashLogoName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DIGITAL CARD"
+        android:letterSpacing="0.5"
+        android:layout_below="@id/splashLogo"
+        android:layout_marginTop="70dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/splashLogoName"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+
+        />
+
+</RelativeLayout>
