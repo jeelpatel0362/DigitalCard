@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/splashlogo"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="120dp"
         />
 
     <TextView
@@ -22,10 +22,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/splashLogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:letterSpacing="0.5"
         android:text="@string/digital_card"
+        android:textColor="@color/textColor"
         android:textSize="24sp" />
 
     <ProgressBar
