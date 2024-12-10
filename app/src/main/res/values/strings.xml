@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DigitalCard</string>
     <string name="digital_card">DIGITAL CARD</string>
+    <string name="digi_card">DIGI CARD</string>
 </resources>
