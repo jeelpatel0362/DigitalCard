@@ -12,9 +12,8 @@
         android:id="@+id/splashLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/splashlogo"
         android:layout_marginTop="120dp"
-        />
+        android:src="@drawable/splashlogo" />
 
     <TextView
         android:id="@+id/splashLogoName"
