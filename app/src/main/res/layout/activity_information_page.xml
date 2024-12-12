@@ -1,26 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/informationPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformationPage">
+    tools:context=".InformationPage"
+    android:background="@color/whiteBg">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
 
-
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="53dp"
-            android:text="@string/digi_card"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:background="@color/splash"
+            android:background="@color/splash">
+
+                    <TextView
+                        android:id="@+id/toolbarTitleName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/digi_card"
+                        android:letterSpacing="0.2"
+                        android:textColor="@color/textColor"
+                        android:layout_gravity="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+
+                        />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/toolbar"
+            android:src="@drawable/userprofile"
+            android:layout_marginTop="20dp"
+            android:foregroundGravity="center"
+            android:layout_centerInParent="true"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/personalInfo"
+            android:text="@string/personal_info"
+            android:textColor="@color/black"
             android:textSize="24sp"
-            android:textColor="@color/textColor"
+            android:textStyle="normal"
+            android:layout_marginTop="25dp"
+            android:layout_below="@id/profile_image"
+            android:layout_marginStart="20dp"
+            android:textFontWeight="700"/>
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/personalInfo"
             />
 
 
 
 
-</RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+</ScrollView>
