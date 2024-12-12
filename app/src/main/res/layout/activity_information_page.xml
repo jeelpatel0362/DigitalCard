@@ -11,6 +11,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="25dp"
         >
 
 
@@ -83,7 +84,7 @@
             android:id="@+id/fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name"
+            android:hint="@string/full_name"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -108,7 +109,7 @@
             android:id="@+id/designation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Designation"
+            android:hint="@string/designation"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -133,7 +134,7 @@
             android:id="@+id/company"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Company"
+            android:hint="@string/company"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -158,7 +159,7 @@
             android:id="@+id/aboutMe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="About Me"
+            android:hint="@string/about_me"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -185,7 +186,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/contactInfo"
-            android:text="Contact Info"
+            android:text="@string/contact_info"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="normal"
@@ -213,7 +214,7 @@
             android:id="@+id/contactNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contact Number"
+            android:hint="@string/contact_number"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -237,7 +238,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/whatsapp_text"
-            android:text="This is WhatsApp Number"
+            android:text="@string/this_is_whatsapp_number"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="normal"
@@ -261,14 +262,14 @@
                 android:id="@+id/isWhatsapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Yes"
+                android:text="@string/yes"
                 android:textColor="@color/black"/>
 
             <RadioButton
                 android:id="@+id/isNotWhatsapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="No"
+                android:text="@string/no"
                 android:textColor="@color/black"/>
 
 
@@ -282,7 +283,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
+            android:hint="@string/email"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -307,7 +308,7 @@
             android:id="@+id/address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Address"
+            android:hint="@string/address"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -331,7 +332,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/serviceInfo"
-            android:text="Service Info"
+            android:text="@string/service_info"
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="normal"
@@ -359,7 +360,7 @@
             android:id="@+id/service"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Service"
+            android:hint="@string/service"
             android:textColorHint="@color/black"
             app:hintTextColor="@color/black"
             app:boxBackgroundMode="outline"
@@ -379,6 +380,34 @@
                 />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_multiple_service"
+            android:text="@string/add_multiple_services_like_service1_service2"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/service"
+            android:layout_marginStart="30dp"
+            android:textFontWeight="700"/>
+
+        <!--Next Button-->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            android:layout_width="200dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/add_multiple_service"
+            android:text="@string/next"
+            android:textSize="24sp"
+            android:background="@drawable/square_button"
+            android:textColor="@color/textColor"
+            android:layout_marginTop="50dp"
+            android:layout_centerInParent="true"
+            />
 
 
         

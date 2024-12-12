@@ -3,4 +3,19 @@
     <string name="digital_card">DIGITAL CARD</string>
     <string name="digi_card">DIGI CARD</string>
     <string name="personal_info">Personal Info</string>
+    <string name="full_name">Full Name</string>
+    <string name="designation">Designation</string>
+    <string name="company">Company</string>
+    <string name="about_me">About Me</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="this_is_whatsapp_number">This is WhatsApp Number</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="service_info">Service Info</string>
+    <string name="service">Service</string>
+    <string name="add_multiple_services_like_service1_service2">Add Multiple Services Like(Service1, Service2...)</string>
+    <string name="next">Next</string>
 </resources>
