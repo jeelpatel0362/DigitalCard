@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,12 +8,16 @@
     tools:context=".EditDataScreen"
     android:background="@color/whiteBg">
 
+<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
     <RelativeLayout
         android:id="@+id/relative1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/splash"
-        android:paddingBottom="50dp"
         >
         <!--User Profile-->
 
@@ -67,11 +71,297 @@
 
     </RelativeLayout>
 
+    <!--floating Buttons-->
+
     <RelativeLayout
+        android:id="@+id/relative2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative1"
+        android:paddingBottom="30dp"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:id="@+id/floatingButtons"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <!-- Phone -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingButton_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/phone"
+                app:tint="@color/splash"
+                android:contentDescription="@string/todo"
+                />
+
+            <!-- Chat -->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingButton_chat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/chat"
+                app:tint="@color/splash"
+                android:layout_marginStart="50dp"
+                />
+
+            <!-- Location -->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingButton_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:tint="@color/splash"
+                android:src="@drawable/location"
+                android:contentDescription="@string/todo"
+                android:layout_marginStart="50dp"
+                />
+
+        </LinearLayout>
+
+        <!--User About-->
+
+        <TextView
+            android:id="@+id/about_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_me"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/floatingButtons"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/user_about_me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="About user"
+            android:layout_below="@id/about_me"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_about_me"
+            />
+
+        <!--User Contact-->
+
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/divider1"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/user_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1234567890"
+            android:layout_below="@id/contact"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_contact"
+            />
+
+        <!--User WhatsApp-->
+
+        <TextView
+            android:id="@+id/whatsapp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WhatsApp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/divider2"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/user_whatsapp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yes or No"
+            android:layout_below="@id/whatsapp"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_whatsapp"
+            />
+
+        <!--User Email-->
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/divider3"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="xyz@gmail.com"
+            android:layout_below="@id/email"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_email"
+            />
+
+        <!--User Address-->
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/divider4"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/user_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Surat"
+            android:layout_below="@id/address"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_address"
+            />
+
+        <!--User Service-->
+
+        <TextView
+            android:id="@+id/service_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/divider5"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/user_service_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service Text"
+            android:layout_below="@id/service_text"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+        <!--Floating Button For Download & Edit-->
+
+        <LinearLayout
+            android:id="@+id/floatingButtons2"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_below="@id/user_service_text"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            >
+
+        <!-- Download -->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingButton_download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/download"
+            app:tint="@color/splash"
+            android:layout_marginStart="5dp"
+            android:contentDescription="@string/todo"
+            />
+
+        <!-- Edit -->
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingButton_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/edit"
+            app:tint="@color/splash"
+            android:layout_marginStart="250dp"
+            />
+
+        </LinearLayout>
 
 
     </RelativeLayout>
-
 </RelativeLayout>
+</ScrollView>

@@ -18,4 +18,5 @@
     <string name="service">Service</string>
     <string name="add_multiple_services_like_service1_service2">Add Multiple Services Like(Service1, Service2...)</string>
     <string name="next">Next</string>
+    <string name="todo">TODO</string>
 </resources>
