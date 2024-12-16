@@ -129,6 +129,10 @@ public class InformationPage extends AppCompatActivity {
         } else if (radioGroupId == R.id.isNotWhatsapp)
         {
             selected = "No";
+        }else {
+
+            Toast.makeText(this, "Please select an option", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         if (nameText.isEmpty()){
