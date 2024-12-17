@@ -32,7 +32,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class InformationPage extends AppCompatActivity {
 
     private CircleImageView profile_image;
-    private TextInputLayout fullName,designation,company,aboutMe,contactNumber,email,address,service;
+    private TextInputLayout fullName,designation,company,aboutMe,contactNumber,email,address,service,errorText;
     private TextInputEditText fullName_content,designation_content,company_content,aboutMe_content,contactNumber_content,email_content,address_content,service_content;
     private RadioGroup radioGroup;
     private RadioButton isWhatsapp,isNotWhatsapp;
@@ -80,6 +80,7 @@ public class InformationPage extends AppCompatActivity {
         isWhatsapp = findViewById(R.id.isWhatsapp);
         isNotWhatsapp = findViewById(R.id.isNotWhatsapp);
         nextButton = findViewById(R.id.nextButton);
+        errorText = findViewById(R.id.errorText);
 
     }
 
@@ -130,6 +131,10 @@ public class InformationPage extends AppCompatActivity {
         } else if (radioGroupId == R.id.isNotWhatsapp)
         {
             selected = "No";
+        } else {
+            errorText.setError("Please select an option for WhatsApp");
+            errorText.requestFocus();
+             return;
         }
 
         if (nameText.isEmpty()){

@@ -273,6 +273,16 @@
                 android:textColor="@color/black"/>
 
         </RadioGroup>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:id="@+id/errorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroup"
+            android:layout_marginStart="22dp"
+            android:layout_marginHorizontal="20dp">
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!--Email-->
 
@@ -287,7 +297,7 @@
             app:boxBackgroundMode="outline"
             app:boxStrokeColor="@color/black"
             android:layout_marginTop="15dp"
-            android:layout_below="@id/radioGroup"
+            android:layout_below="@id/errorText"
             android:layout_marginHorizontal="20dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_content"
