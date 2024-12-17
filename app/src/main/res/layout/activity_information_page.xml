@@ -15,11 +15,13 @@
         >
 
 
-        <androidx.appcompat.widget.Toolbar
+        <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/splash"> <!-- android:fitsSystemWindows="true" -->
+            android:background="@color/splash"
+            android:elevation="4dp"
+            android:fitsSystemWindows="true">
 
                     <TextView
                         android:id="@+id/toolbarTitleName"
@@ -34,7 +36,7 @@
                         android:paddingTop="8dp"
                         />
 
-        </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <!--Profile image-->
 

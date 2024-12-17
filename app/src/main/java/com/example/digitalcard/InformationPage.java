@@ -17,6 +17,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -43,6 +44,7 @@ public class InformationPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_information_page);
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         initBinding();
         pickImage();
 
@@ -128,14 +130,14 @@ public class InformationPage extends AppCompatActivity {
         if (radioGroupId == R.id.isWhatsapp)
         {
             selected = "Yes";
-        } else if (radioGroupId == R.id.isNotWhatsapp)
-        {
+        } else if (radioGroupId == R.id.isNotWhatsapp) {
             selected = "No";
-        } else {
-            errorText.setError("Please select an option for WhatsApp");
-            errorText.requestFocus();
-             return;
         }
+//         else {
+//            errorText.setError("Please select an option for WhatsApp");
+//            errorText.requestFocus();
+//             return;
+//        }
 
         if (nameText.isEmpty()){
             fullName_content.setError("Please Enter Name");
@@ -157,6 +159,9 @@ public class InformationPage extends AppCompatActivity {
             contactNumber_content.setError("Contact Number is required");
             contactNumber.setError("Contact Number is required");
             contactNumber_content.requestFocus();
+        }else if (radioGroupId == -1){
+            errorText.setError("Please select an option for WhatsApp");
+            errorText.requestFocus();
         }else if (emailText.isEmpty()) {
             email_content.setError("Email is required");
             email.setError("Email is required");
