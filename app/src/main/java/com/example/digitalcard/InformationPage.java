@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -75,10 +76,10 @@ public class InformationPage extends AppCompatActivity {
         address_content = findViewById(R.id.address_content);
         service_content = findViewById(R.id.service_content);
 
-        radioGroup =findViewById(R.id.radioGroup);
-        isWhatsapp =findViewById(R.id.isWhatsapp);
-        isNotWhatsapp =findViewById(R.id.isNotWhatsapp);
-        nextButton =findViewById(R.id.nextButton);
+        radioGroup = findViewById(R.id.radioGroup);
+        isWhatsapp = findViewById(R.id.isWhatsapp);
+        isNotWhatsapp = findViewById(R.id.isNotWhatsapp);
+        nextButton = findViewById(R.id.nextButton);
 
     }
 
@@ -129,10 +130,6 @@ public class InformationPage extends AppCompatActivity {
         } else if (radioGroupId == R.id.isNotWhatsapp)
         {
             selected = "No";
-        }else {
-
-            Toast.makeText(this, "Please select an option", Toast.LENGTH_SHORT).show();
-            return;
         }
 
         if (nameText.isEmpty()){

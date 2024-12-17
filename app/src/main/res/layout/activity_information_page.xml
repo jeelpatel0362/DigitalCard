@@ -272,8 +272,6 @@
                 android:text="@string/no"
                 android:textColor="@color/black"/>
 
-
-
         </RadioGroup>
 
         <!--Email-->
