@@ -99,7 +99,7 @@
                 android:layout_weight="1"
                 android:src="@drawable/phone"
                 app:tint="@color/splash"
-                android:contentDescription="@string/todo"
+                android:contentDescription="Call"
                 />
 
             <!-- Chat -->
@@ -109,7 +109,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:contentDescription="@string/todo"
+                android:contentDescription="Message"
                 android:src="@drawable/chat"
                 app:tint="@color/splash"
                 android:layout_marginStart="50dp"
@@ -124,7 +124,7 @@
                 android:layout_weight="1"
                 app:tint="@color/splash"
                 android:src="@drawable/location"
-                android:contentDescription="@string/todo"
+                android:contentDescription="Location"
                 android:layout_marginStart="50dp"
                 />
 
@@ -345,7 +345,7 @@
             app:tint="@color/splash"
             android:layout_alignParentStart="true"
             android:layout_marginStart="5dp"
-            android:contentDescription="@string/todo"
+            android:contentDescription="Download"
             />
 
         <!-- Edit -->
@@ -354,7 +354,7 @@
             android:id="@+id/floatingButton_edit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/todo"
+            android:contentDescription="Edit"
             android:src="@drawable/edit"
             app:tint="@color/splash"
             android:layout_marginEnd="5dp"

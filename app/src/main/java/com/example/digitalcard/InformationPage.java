@@ -133,11 +133,6 @@ public class InformationPage extends AppCompatActivity {
         } else if (radioGroupId == R.id.isNotWhatsapp) {
             selected = "No";
         }
-//         else {
-//            errorText.setError("Please select an option for WhatsApp");
-//            errorText.requestFocus();
-//             return;
-//        }
 
         if (nameText.isEmpty()){
             fullName_content.setError("Please Enter Name");
@@ -163,6 +158,7 @@ public class InformationPage extends AppCompatActivity {
             errorText.setError("Please select an option for WhatsApp");
             errorText.requestFocus();
         }else if (emailText.isEmpty()) {
+
             email_content.setError("Email is required");
             email.setError("Email is required");
             email_content.requestFocus();
