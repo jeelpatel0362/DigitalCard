@@ -9,6 +9,7 @@
     android:background="@color/whiteBg">
 
 <RelativeLayout
+        android:id="@+id/mainRelative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
