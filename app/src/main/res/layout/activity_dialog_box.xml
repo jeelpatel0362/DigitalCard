@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainDialogBox"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DialogBox"
+    android:padding="20dp"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/headerTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Header Theme"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
+
+    <HorizontalScrollView
+        android:id="@+id/headerThemeColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerTheme"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+
+        <LinearLayout
+            android:id="@+id/splashColor"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:background="@color/splash"
+            />
+
+            <LinearLayout
+                android:id="@+id/rosePinkColor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@color/rosePink"
+                />
+
+            <LinearLayout
+                android:id="@+id/blackColor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@color/black"
+                />
+
+                <LinearLayout
+                    android:id="@+id/beaverColor"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    android:background="@color/beaver"
+                   />
+
+            <LinearLayout
+                android:id="@+id/darkPurpleColor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="10dp"
+                android:background="@color/darkPurple"
+                android:orientation="horizontal" />
+
+            <LinearLayout
+                android:id="@+id/pacificCyanColor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@color/pacificCyan"
+                />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/contentBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content Theme"
+        android:textSize="24sp"
+        android:layout_below="@id/headerThemeColor"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText"/>
+
+    <HorizontalScrollView
+        android:id="@+id/contentBackgroundImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentBackground"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/bg1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg1"
+                />
+
+            <LinearLayout
+                android:id="@+id/bg2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg2"
+                />
+
+            <LinearLayout
+                android:id="@+id/bg3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg3"
+                />
+
+            <LinearLayout
+                android:id="@+id/bg4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg4"
+                />
+
+            <LinearLayout
+                android:id="@+id/bg5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg5"
+                />
+
+            <LinearLayout
+                android:id="@+id/bg6"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:layout_margin="10dp"
+                android:background="@drawable/bg6"
+                />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/contentFont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Content Theme"
+        android:textSize="24sp"
+        android:layout_below="@id/contentBackgroundImage"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText"/>
+
+    <HorizontalScrollView
+        android:id="@+id/contentFontStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentFont"
+        android:background="@color/white"
+        >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/fontStyle1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style1"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+
+        <TextView
+            android:id="@+id/fontStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style2"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style3"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style4"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style5"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style6"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style7"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style8"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+        <TextView
+            android:id="@+id/fontStyle9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/style9"
+            android:text="Hello"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            tools:ignore="HardcodedText"/>
+
+
+
+    </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentFontStyle"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="25dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/resetButton"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:text="Reset"
+            android:textSize="24sp"
+            android:background="@drawable/square_button"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/textColor"
+            tools:ignore="HardcodedText"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nextButton"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:text="Cancel"
+            android:textSize="24sp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/square_button"
+            android:textColor="@color/textColor"
+            tools:ignore="HardcodedText"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

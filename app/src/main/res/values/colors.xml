@@ -5,4 +5,9 @@
     <color name="splash">#FF00233b</color>
     <color name="whiteBg">#FFE2E2E2</color>
     <color name="textColor">#FF3782B3</color>
+    <color name="darkPurple">#FF2F0A28</color>
+    <color name="beaver">#FFA27E6F</color>
+    <color name="pacificCyan">#FF55AFCD</color>
+    <color name="rosePink">#FFFF70C5</color>
+
 </resources>
