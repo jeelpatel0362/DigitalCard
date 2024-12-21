@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DialogBox"
     android:padding="20dp"
+
     android:background="@color/white">
 
     <TextView
@@ -34,8 +35,8 @@
 
         <LinearLayout
             android:id="@+id/splashColor"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:orientation="horizontal"
             android:layout_margin="10dp"
             android:background="@color/splash"
@@ -43,8 +44,8 @@
 
             <LinearLayout
                 android:id="@+id/rosePinkColor"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@color/rosePink"
@@ -52,8 +53,8 @@
 
             <LinearLayout
                 android:id="@+id/blackColor"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@color/black"
@@ -61,8 +62,8 @@
 
                 <LinearLayout
                     android:id="@+id/beaverColor"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:orientation="horizontal"
                     android:layout_margin="10dp"
                     android:background="@color/beaver"
@@ -70,16 +71,16 @@
 
             <LinearLayout
                 android:id="@+id/darkPurpleColor"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@color/darkPurple"
                 android:orientation="horizontal" />
 
             <LinearLayout
                 android:id="@+id/pacificCyanColor"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@color/pacificCyan"
@@ -116,8 +117,8 @@
 
             <LinearLayout
                 android:id="@+id/bg1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg1"
@@ -125,8 +126,8 @@
 
             <LinearLayout
                 android:id="@+id/bg2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg2"
@@ -134,8 +135,8 @@
 
             <LinearLayout
                 android:id="@+id/bg3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg3"
@@ -143,8 +144,8 @@
 
             <LinearLayout
                 android:id="@+id/bg4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg4"
@@ -152,8 +153,8 @@
 
             <LinearLayout
                 android:id="@+id/bg5"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg5"
@@ -161,8 +162,8 @@
 
             <LinearLayout
                 android:id="@+id/bg6"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:layout_margin="10dp"
                 android:background="@drawable/bg6"
@@ -303,21 +304,21 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/resetButton"
-            android:layout_width="150dp"
-            android:layout_height="53dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Reset"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:background="@drawable/square_button"
             android:layout_marginEnd="10dp"
             android:textColor="@color/textColor"
             tools:ignore="HardcodedText"
             />
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/nextButton"
-            android:layout_width="150dp"
-            android:layout_height="53dp"
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Cancel"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:layout_marginStart="10dp"
             android:background="@drawable/square_button"
             android:textColor="@color/textColor"

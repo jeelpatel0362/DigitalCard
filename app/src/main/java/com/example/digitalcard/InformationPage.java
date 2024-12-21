@@ -30,6 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class InformationPage extends AppCompatActivity {
 
     private CircleImageView profile_image;
+    private static final int PICK_IMAGE_REQUEST = 100;
     private TextInputLayout fullName,designation,company,aboutMe,contactNumber,email,address,service,errorText;
     private TextInputEditText fullName_content,designation_content,company_content,aboutMe_content,contactNumber_content,email_content,address_content,service_content;
     private RadioGroup radioGroup;
@@ -41,7 +42,7 @@ public class InformationPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_information_page);
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+//        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         initBinding();
         pickImage();
 
@@ -94,21 +95,13 @@ public class InformationPage extends AppCompatActivity {
         });
     }
     @Override
-    protected  void onActivityResult(int requestCode , int resultCode, @Nullable Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-
-        if(data!=null)
-        {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null) {
             Uri uri = data.getData();
             profile_image.setImageURI(uri);
-        } else if (resultCode == 101) {
-            if(data!=null)
-            {
-                Bitmap b1 = (Bitmap) data.getExtras().get("data");
-                profile_image.setImageBitmap(b1);
-            }
         }
-    };
+    }
 
     public void nextButton(){
 
@@ -168,16 +161,16 @@ public class InformationPage extends AppCompatActivity {
             service.setError("Please Enter ServiceInfo");
             service_content.requestFocus();
         }else{
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            Bitmap bitmap = ((BitmapDrawable) profile_image.getDrawable()).getBitmap();
 
-            bitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
-
-            byte[] byteArray = stream.toByteArray();
             Intent intent = new Intent(InformationPage.this, EditDataScreen.class);
 
-            intent.putExtra("profilePicture",byteArray);
 
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            Bitmap bitmap = ((BitmapDrawable) profile_image.getDrawable()).getBitmap();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+            byte[] byteArray = stream.toByteArray();
+
+            intent.putExtra("profilePicture",byteArray);
             intent.putExtra("fullName",nameText);
             intent.putExtra("designation",designationText);
             intent.putExtra("company",companyText);

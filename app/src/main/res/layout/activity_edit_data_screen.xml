@@ -12,7 +12,7 @@
         android:id="@+id/mainRelative"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
+        android:paddingBottom="50dp"
         >
 
     <RelativeLayout
@@ -324,6 +324,15 @@
             android:layout_marginTop="10dp"
             android:textColor="@color/black"
             />
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerThickness="2dp"
+            app:dividerColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/user_service_text"
+            />
 
         <!--Floating Button For Download & Edit-->
 
@@ -331,7 +340,7 @@
             android:id="@+id/floatingButtons2"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:layout_below="@id/user_service_text"
+            android:layout_below="@id/divider6"
             android:orientation="horizontal"
             android:layout_marginTop="15dp"
             >
