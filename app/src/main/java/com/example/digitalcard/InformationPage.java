@@ -23,6 +23,9 @@ import com.google.android.material.textfield.TextInputLayout;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -165,12 +168,17 @@ public class InformationPage extends AppCompatActivity {
             Intent intent = new Intent(InformationPage.this, EditDataScreen.class);
 
 
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            Bitmap bitmap = ((BitmapDrawable) profile_image.getDrawable()).getBitmap();
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-            byte[] byteArray = stream.toByteArray();
+            File tempFile;
+            try {
+                tempFile = saveImageToCache();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
-            intent.putExtra("profilePicture",byteArray);
+
+
+
+            intent.putExtra("profilePicturePath", tempFile.getAbsolutePath());
             intent.putExtra("fullName",nameText);
             intent.putExtra("designation",designationText);
             intent.putExtra("company",companyText);
@@ -186,5 +194,14 @@ public class InformationPage extends AppCompatActivity {
             Toast.makeText(InformationPage.this,"Success",Toast.LENGTH_SHORT).show();
         }
     }
-
+    private File saveImageToCache() throws IOException {
+        Bitmap bitmap = ((BitmapDrawable) profile_image.getDrawable()).getBitmap();
+        File tempFile = new File(getCacheDir(), "profile_picture.jpg");
+        try (FileOutputStream fos = new FileOutputStream(tempFile)) {
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
+        }
+        return tempFile;
+    }
 }
+
+

@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -38,7 +39,7 @@ public class EditDataScreen extends AppCompatActivity {
     private RelativeLayout headerBox, contentBox, mainViewBox;
 
     private String fullName;
-
+    private static final int REQUEST_CODE_PERMISSIONS = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,41 +61,40 @@ public class EditDataScreen extends AppCompatActivity {
                 customEditBox();
             }
         });
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
     }
 
     String getFilePath() {
         File f = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         String path = f.getPath() + "/MyCard";
-        File file = new File(path);
-        if (!file.exists()) {
-            file.mkdir();
+        File filePath = new File(path);
+        if (!filePath.exists()) {
+            filePath.mkdirs();
         }
         return path;
     }
 
     void saveImage() {
-        mainViewBox.setDrawingCacheEnabled(true);
-        Bitmap bitmap = mainViewBox.getDrawingCache();
+        Bitmap bitmap = Bitmap.createBitmap(mainViewBox.getWidth(), mainViewBox.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        mainViewBox.draw(canvas);
 
         String path = getFilePath();
         String finalPath = path + "/" + "card.jpg";
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(new File(finalPath));
+        try (FileOutputStream fileOutputStream = new FileOutputStream(new File(finalPath))) {
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-            fileOutputStream.close();
-            mainViewBox.invalidate();
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            Toast.makeText(EditDataScreen.this,"Successfully Download",Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            {
-                mainViewBox.setDrawingCacheEnabled(false);
-            }
+            e.printStackTrace();
+            Toast.makeText(this, "Error saving image: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
     }
+
 
 
     public void initBindings() {
@@ -119,35 +119,38 @@ public class EditDataScreen extends AppCompatActivity {
     void getData() {
         Intent intent = getIntent();
         if (intent != null) {
+            String imagePath = intent.getStringExtra("profilePicturePath");
 
-            byte[] byteArray = intent.getByteArrayExtra("profilePicture");
-            if (byteArray != null) {
-                Bitmap profilePicture = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-                CircleImageView profileImageView = findViewById(R.id.user_profile);
-                profileImageView.setImageBitmap(profilePicture);
-            } else {
-                Toast.makeText(EditDataScreen.this, "yrctfy", Toast.LENGTH_SHORT).show();
+            if (imagePath != null) {
+                File imageFile = new File(imagePath);
+                if (imageFile.exists()) {
+                    Bitmap profilePicture = BitmapFactory.decodeFile(imagePath);
+                    CircleImageView profileImageView = findViewById(R.id.user_profile);
+                    profileImageView.setImageBitmap(profilePicture);
+                } else {
+                    Toast.makeText(EditDataScreen.this, "", Toast.LENGTH_SHORT).show();
+                }
+                fullName = intent.getStringExtra("fullName");
+                String designation = intent.getStringExtra("designation");
+                String company = intent.getStringExtra("company");
+                String aboutMe = intent.getStringExtra("aboutMe");
+                String contact = intent.getStringExtra("contactNumber");
+                String whatsappNumber = intent.getStringExtra("selected");
+                String email = intent.getStringExtra("email");
+                String address = intent.getStringExtra("address");
+                String services = intent.getStringExtra("serviceInfo");
+
+                fullNameTextview.setText(fullName);
+                designationTextview.setText(designation);
+                companyText.setText(company);
+                aboutUserTextview.setText(aboutMe);
+                userNumberTextview.setText(contact);
+                userWhatsappTextview.setText(whatsappNumber);
+                userEmailTextview.setText(email);
+                userAddressTextview.setText(address);
+                userServiceTextview.setText(services);
+
             }
-            fullName = intent.getStringExtra("fullName");
-            String designation = intent.getStringExtra("designation");
-            String company = intent.getStringExtra("company");
-            String aboutMe = intent.getStringExtra("aboutMe");
-            String contact = intent.getStringExtra("contactNumber");
-            String whatsappNumber = intent.getStringExtra("selected");
-            String email = intent.getStringExtra("email");
-            String address = intent.getStringExtra("address");
-            String services = intent.getStringExtra("serviceInfo");
-
-            fullNameTextview.setText(fullName);
-            designationTextview.setText(designation);
-            companyText.setText(company);
-            aboutUserTextview.setText(aboutMe);
-            userNumberTextview.setText(contact);
-            userWhatsappTextview.setText(whatsappNumber);
-            userEmailTextview.setText(email);
-            userAddressTextview.setText(address);
-            userServiceTextview.setText(services);
-
         }
     }
 
