@@ -1,5 +1,3 @@
-![8](https://github.com/user-attachments/assets/3cd6f220-3f11-4779-81b3-6602a9a0533b)# Digital Card Application
-
 The Digital Card Application is a versatile mobile tool designed to streamline personal and professional networking. 
 With a user-friendly interface, it allows individuals to create and share digital business cards containing essential contact details, 
 professional information, and personal branding elements. Users can customize their profiles, including adding profile pictures and brief descriptions. 
