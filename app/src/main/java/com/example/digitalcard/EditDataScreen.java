@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -32,7 +33,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class EditDataScreen extends AppCompatActivity {
 
-    private FloatingActionButton saveButton, editScreenButton;
+    private FloatingActionButton saveButton, editScreenButton,callButton,messageButton,locationButton;
 
     private TextView fullNameTextview, designationTextview, companyText, aboutUserTextview, userNumberTextview, userWhatsappTextview, userEmailTextview, userAddressTextview, userServiceTextview;
 
@@ -61,6 +62,39 @@ public class EditDataScreen extends AppCompatActivity {
                 customEditBox();
             }
         });
+
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse("tel:+916353314703"));
+                startActivity(callIntent);
+
+            }
+        });
+
+        messageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent messageIntent = new Intent(Intent.ACTION_SENDTO);
+                messageIntent.setData(Uri.parse("smsto:+916353314703"));
+                messageIntent.putExtra("sms_body","Hi");
+                startActivity(messageIntent);
+            }
+        });
+
+
+        locationButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String geoUri = "geo:0,0?q=Surat,Gujarat,India";
+                Intent locationIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
+                startActivity(locationIntent);
+
+            }
+        });
+
+        
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -113,6 +147,10 @@ public class EditDataScreen extends AppCompatActivity {
         headerBox = findViewById(R.id.relative1);
         contentBox = findViewById(R.id.relative2);
         mainViewBox = findViewById(R.id.mainRelative);
+        callButton = findViewById(R.id.floatingButton_phone);
+        messageButton = findViewById(R.id.floatingButton_chat);
+        locationButton = findViewById(R.id.floatingButton_location);
+
 
     }
 
