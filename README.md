@@ -40,9 +40,13 @@ Information Screen
 ### Demo
 
 
+https://github.com/user-attachments/assets/eee4b168-481d-45b5-9f37-db4d0cce3806
+
+
 
 ### Pictures of application 
 
+<img src="https://github.com/user-attachments/assets/84b8f4e6-ce01-4935-a2fd-4219dfa56ffa" width="200"/>
 
 
 ## Contribution
